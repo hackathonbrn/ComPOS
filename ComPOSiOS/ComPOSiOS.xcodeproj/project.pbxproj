@@ -7,46 +7,67 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A29F1286228F1991003C517A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F1285228F1991003C517A /* AppDelegate.swift */; };
-		A29F1288228F1991003C517A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F1287228F1991003C517A /* ViewController.swift */; };
-		A29F128B228F1991003C517A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A29F1289228F1991003C517A /* Main.storyboard */; };
-		A29F128D228F1991003C517A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A29F128C228F1991003C517A /* Assets.xcassets */; };
-		A29F1290228F1991003C517A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A29F128E228F1991003C517A /* LaunchScreen.storyboard */; };
-		A29F129B228F1991003C517A /* ComPOSiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F129A228F1991003C517A /* ComPOSiOSTests.swift */; };
+		A29F12BB228F1E81003C517A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F12BA228F1E81003C517A /* AppDelegate.swift */; };
+		A29F12BD228F1E81003C517A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F12BC228F1E81003C517A /* ViewController.swift */; };
+		A29F12C0228F1E81003C517A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A29F12BE228F1E81003C517A /* Main.storyboard */; };
+		A29F12C2228F1E82003C517A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A29F12C1228F1E82003C517A /* Assets.xcassets */; };
+		A29F12C5228F1E82003C517A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A29F12C3228F1E82003C517A /* LaunchScreen.storyboard */; };
+		A29F12D0228F1E82003C517A /* ComPOSiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F12CF228F1E82003C517A /* ComPOSiOSTests.swift */; };
+		A29F12DC228F1EAB003C517A /* ComPOSiOS-Bridging-Header.m in Sources */ = {isa = PBXBuildFile; fileRef = A29F12DB228F1EAB003C517A /* ComPOSiOS-Bridging-Header.m */; };
+		A29F12E2228F205A003C517A /* fptr10.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A29F12E1228F205A003C517A /* fptr10.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A29F12E4228F2094003C517A /* fptr10.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A29F12E1228F205A003C517A /* fptr10.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A29F1297228F1991003C517A /* PBXContainerItemProxy */ = {
+		A29F12CC228F1E82003C517A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A29F127A228F1991003C517A /* Project object */;
+			containerPortal = A29F12AF228F1E81003C517A /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A29F1281228F1991003C517A;
+			remoteGlobalIDString = A29F12B6228F1E81003C517A;
 			remoteInfo = ComPOSiOS;
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A29F12E0228F1F4A003C517A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A29F12E2228F205A003C517A /* fptr10.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		A29F1282228F1991003C517A /* ComPOSiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComPOSiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A29F1285228F1991003C517A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A29F1287228F1991003C517A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A29F128A228F1991003C517A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A29F128C228F1991003C517A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A29F128F228F1991003C517A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A29F1291228F1991003C517A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A29F1296228F1991003C517A /* ComPOSiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComPOSiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A29F129A228F1991003C517A /* ComPOSiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComPOSiOSTests.swift; sourceTree = "<group>"; };
-		A29F129C228F1991003C517A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A29F12B7228F1E81003C517A /* ComPOSiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComPOSiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A29F12BA228F1E81003C517A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A29F12BC228F1E81003C517A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A29F12BF228F1E81003C517A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A29F12C1228F1E82003C517A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A29F12C4228F1E82003C517A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A29F12C6228F1E82003C517A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A29F12CB228F1E82003C517A /* ComPOSiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComPOSiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A29F12CF228F1E82003C517A /* ComPOSiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComPOSiOSTests.swift; sourceTree = "<group>"; };
+		A29F12D1228F1E82003C517A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A29F12DA228F1EAB003C517A /* ComPOSiOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ComPOSiOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		A29F12DB228F1EAB003C517A /* ComPOSiOS-Bridging-Header.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ComPOSiOS-Bridging-Header.m"; sourceTree = "<group>"; };
+		A29F12E1228F205A003C517A /* fptr10.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = fptr10.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A29F127F228F1991003C517A /* Frameworks */ = {
+		A29F12B4228F1E81003C517A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A29F12E4228F2094003C517A /* fptr10.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A29F1293228F1991003C517A /* Frameworks */ = {
+		A29F12C8228F1E82003C517A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -56,56 +77,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A29F1279228F1991003C517A = {
+		A29F12AE228F1E81003C517A = {
 			isa = PBXGroup;
 			children = (
-				A29F1284228F1991003C517A /* ComPOSiOS */,
-				A29F1299228F1991003C517A /* ComPOSiOSTests */,
-				A29F1283228F1991003C517A /* Products */,
+				A29F12E1228F205A003C517A /* fptr10.framework */,
+				A29F12B9228F1E81003C517A /* ComPOSiOS */,
+				A29F12CE228F1E82003C517A /* ComPOSiOSTests */,
+				A29F12B8228F1E81003C517A /* Products */,
+				A29F12E3228F2094003C517A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		A29F1283228F1991003C517A /* Products */ = {
+		A29F12B8228F1E81003C517A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A29F1282228F1991003C517A /* ComPOSiOS.app */,
-				A29F1296228F1991003C517A /* ComPOSiOSTests.xctest */,
+				A29F12B7228F1E81003C517A /* ComPOSiOS.app */,
+				A29F12CB228F1E82003C517A /* ComPOSiOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A29F1284228F1991003C517A /* ComPOSiOS */ = {
+		A29F12B9228F1E81003C517A /* ComPOSiOS */ = {
 			isa = PBXGroup;
 			children = (
-				A29F1285228F1991003C517A /* AppDelegate.swift */,
-				A29F1287228F1991003C517A /* ViewController.swift */,
-				A29F1289228F1991003C517A /* Main.storyboard */,
-				A29F128C228F1991003C517A /* Assets.xcassets */,
-				A29F128E228F1991003C517A /* LaunchScreen.storyboard */,
-				A29F1291228F1991003C517A /* Info.plist */,
+				A29F12BA228F1E81003C517A /* AppDelegate.swift */,
+				A29F12BC228F1E81003C517A /* ViewController.swift */,
+				A29F12BE228F1E81003C517A /* Main.storyboard */,
+				A29F12C1228F1E82003C517A /* Assets.xcassets */,
+				A29F12C3228F1E82003C517A /* LaunchScreen.storyboard */,
+				A29F12C6228F1E82003C517A /* Info.plist */,
+				A29F12DB228F1EAB003C517A /* ComPOSiOS-Bridging-Header.m */,
+				A29F12DA228F1EAB003C517A /* ComPOSiOS-Bridging-Header.h */,
 			);
 			path = ComPOSiOS;
 			sourceTree = "<group>";
 		};
-		A29F1299228F1991003C517A /* ComPOSiOSTests */ = {
+		A29F12CE228F1E82003C517A /* ComPOSiOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				A29F129A228F1991003C517A /* ComPOSiOSTests.swift */,
-				A29F129C228F1991003C517A /* Info.plist */,
+				A29F12CF228F1E82003C517A /* ComPOSiOSTests.swift */,
+				A29F12D1228F1E82003C517A /* Info.plist */,
 			);
 			path = ComPOSiOSTests;
+			sourceTree = "<group>";
+		};
+		A29F12E3228F2094003C517A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A29F1281228F1991003C517A /* ComPOSiOS */ = {
+		A29F12B6228F1E81003C517A /* ComPOSiOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A29F129F228F1991003C517A /* Build configuration list for PBXNativeTarget "ComPOSiOS" */;
+			buildConfigurationList = A29F12D4228F1E82003C517A /* Build configuration list for PBXNativeTarget "ComPOSiOS" */;
 			buildPhases = (
-				A29F127E228F1991003C517A /* Sources */,
-				A29F127F228F1991003C517A /* Frameworks */,
-				A29F1280228F1991003C517A /* Resources */,
+				A29F12B3228F1E81003C517A /* Sources */,
+				A29F12B4228F1E81003C517A /* Frameworks */,
+				A29F12B5228F1E81003C517A /* Resources */,
+				A29F12E0228F1F4A003C517A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -113,47 +146,48 @@
 			);
 			name = ComPOSiOS;
 			productName = ComPOSiOS;
-			productReference = A29F1282228F1991003C517A /* ComPOSiOS.app */;
+			productReference = A29F12B7228F1E81003C517A /* ComPOSiOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A29F1295228F1991003C517A /* ComPOSiOSTests */ = {
+		A29F12CA228F1E82003C517A /* ComPOSiOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A29F12A2228F1991003C517A /* Build configuration list for PBXNativeTarget "ComPOSiOSTests" */;
+			buildConfigurationList = A29F12D7228F1E82003C517A /* Build configuration list for PBXNativeTarget "ComPOSiOSTests" */;
 			buildPhases = (
-				A29F1292228F1991003C517A /* Sources */,
-				A29F1293228F1991003C517A /* Frameworks */,
-				A29F1294228F1991003C517A /* Resources */,
+				A29F12C7228F1E82003C517A /* Sources */,
+				A29F12C8228F1E82003C517A /* Frameworks */,
+				A29F12C9228F1E82003C517A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A29F1298228F1991003C517A /* PBXTargetDependency */,
+				A29F12CD228F1E82003C517A /* PBXTargetDependency */,
 			);
 			name = ComPOSiOSTests;
 			productName = ComPOSiOSTests;
-			productReference = A29F1296228F1991003C517A /* ComPOSiOSTests.xctest */;
+			productReference = A29F12CB228F1E82003C517A /* ComPOSiOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A29F127A228F1991003C517A /* Project object */ = {
+		A29F12AF228F1E81003C517A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Maxim Butin";
 				TargetAttributes = {
-					A29F1281228F1991003C517A = {
+					A29F12B6228F1E81003C517A = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
-					A29F1295228F1991003C517A = {
+					A29F12CA228F1E82003C517A = {
 						CreatedOnToolsVersion = 10.2.1;
-						TestTargetID = A29F1281228F1991003C517A;
+						TestTargetID = A29F12B6228F1E81003C517A;
 					};
 				};
 			};
-			buildConfigurationList = A29F127D228F1991003C517A /* Build configuration list for PBXProject "ComPOSiOS" */;
+			buildConfigurationList = A29F12B2228F1E81003C517A /* Build configuration list for PBXProject "ComPOSiOS" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -161,29 +195,29 @@
 				en,
 				Base,
 			);
-			mainGroup = A29F1279228F1991003C517A;
-			productRefGroup = A29F1283228F1991003C517A /* Products */;
+			mainGroup = A29F12AE228F1E81003C517A;
+			productRefGroup = A29F12B8228F1E81003C517A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A29F1281228F1991003C517A /* ComPOSiOS */,
-				A29F1295228F1991003C517A /* ComPOSiOSTests */,
+				A29F12B6228F1E81003C517A /* ComPOSiOS */,
+				A29F12CA228F1E82003C517A /* ComPOSiOSTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A29F1280228F1991003C517A /* Resources */ = {
+		A29F12B5228F1E81003C517A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A29F1290228F1991003C517A /* LaunchScreen.storyboard in Resources */,
-				A29F128D228F1991003C517A /* Assets.xcassets in Resources */,
-				A29F128B228F1991003C517A /* Main.storyboard in Resources */,
+				A29F12C5228F1E82003C517A /* LaunchScreen.storyboard in Resources */,
+				A29F12C2228F1E82003C517A /* Assets.xcassets in Resources */,
+				A29F12C0228F1E81003C517A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A29F1294228F1991003C517A /* Resources */ = {
+		A29F12C9228F1E82003C517A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -193,46 +227,47 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A29F127E228F1991003C517A /* Sources */ = {
+		A29F12B3228F1E81003C517A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A29F1288228F1991003C517A /* ViewController.swift in Sources */,
-				A29F1286228F1991003C517A /* AppDelegate.swift in Sources */,
+				A29F12BD228F1E81003C517A /* ViewController.swift in Sources */,
+				A29F12DC228F1EAB003C517A /* ComPOSiOS-Bridging-Header.m in Sources */,
+				A29F12BB228F1E81003C517A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A29F1292228F1991003C517A /* Sources */ = {
+		A29F12C7228F1E82003C517A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A29F129B228F1991003C517A /* ComPOSiOSTests.swift in Sources */,
+				A29F12D0228F1E82003C517A /* ComPOSiOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A29F1298228F1991003C517A /* PBXTargetDependency */ = {
+		A29F12CD228F1E82003C517A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A29F1281228F1991003C517A /* ComPOSiOS */;
-			targetProxy = A29F1297228F1991003C517A /* PBXContainerItemProxy */;
+			target = A29F12B6228F1E81003C517A /* ComPOSiOS */;
+			targetProxy = A29F12CC228F1E82003C517A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A29F1289228F1991003C517A /* Main.storyboard */ = {
+		A29F12BE228F1E81003C517A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A29F128A228F1991003C517A /* Base */,
+				A29F12BF228F1E81003C517A /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		A29F128E228F1991003C517A /* LaunchScreen.storyboard */ = {
+		A29F12C3228F1E82003C517A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A29F128F228F1991003C517A /* Base */,
+				A29F12C4228F1E82003C517A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -240,7 +275,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		A29F129D228F1991003C517A /* Debug */ = {
+		A29F12D2228F1E82003C517A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -301,7 +336,7 @@
 			};
 			name = Debug;
 		};
-		A29F129E228F1991003C517A /* Release */ = {
+		A29F12D3228F1E82003C517A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -356,12 +391,17 @@
 			};
 			name = Release;
 		};
-		A29F12A0228F1991003C517A /* Debug */ = {
+		A29F12D5228F1E82003C517A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T663N6CXV2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ComPOSiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -369,17 +409,24 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.butinmv.ComPOSiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ComPOSiOS/ComPOSiOS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		A29F12A1228F1991003C517A /* Release */ = {
+		A29F12D6228F1E82003C517A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T663N6CXV2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ComPOSiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -387,12 +434,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.butinmv.ComPOSiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ComPOSiOS/ComPOSiOS-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		A29F12A3228F1991003C517A /* Debug */ = {
+		A29F12D8228F1E82003C517A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -413,7 +461,7 @@
 			};
 			name = Debug;
 		};
-		A29F12A4228F1991003C517A /* Release */ = {
+		A29F12D9228F1E82003C517A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -437,34 +485,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A29F127D228F1991003C517A /* Build configuration list for PBXProject "ComPOSiOS" */ = {
+		A29F12B2228F1E81003C517A /* Build configuration list for PBXProject "ComPOSiOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A29F129D228F1991003C517A /* Debug */,
-				A29F129E228F1991003C517A /* Release */,
+				A29F12D2228F1E82003C517A /* Debug */,
+				A29F12D3228F1E82003C517A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A29F129F228F1991003C517A /* Build configuration list for PBXNativeTarget "ComPOSiOS" */ = {
+		A29F12D4228F1E82003C517A /* Build configuration list for PBXNativeTarget "ComPOSiOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A29F12A0228F1991003C517A /* Debug */,
-				A29F12A1228F1991003C517A /* Release */,
+				A29F12D5228F1E82003C517A /* Debug */,
+				A29F12D6228F1E82003C517A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A29F12A2228F1991003C517A /* Build configuration list for PBXNativeTarget "ComPOSiOSTests" */ = {
+		A29F12D7228F1E82003C517A /* Build configuration list for PBXNativeTarget "ComPOSiOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A29F12A3228F1991003C517A /* Debug */,
-				A29F12A4228F1991003C517A /* Release */,
+				A29F12D8228F1E82003C517A /* Debug */,
+				A29F12D9228F1E82003C517A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A29F127A228F1991003C517A /* Project object */;
+	rootObject = A29F12AF228F1E81003C517A /* Project object */;
 }
