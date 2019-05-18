@@ -30,7 +30,16 @@ class ViewController: UIViewController {
     
     @IBAction func print(_ sender: Any) {
         fptr?.setParam(Int32(LIBFPTR_PARAM_TEXT.rawValue), nsStringParam: "Hackathon Barnaul")
+        fptr?.setParam(Int32(LIBFPTR_PARAM_ALIGNMENT.rawValue), intParam: LIBFPTR_ALIGNMENT_CENTER.rawValue)
+        fptr?.setParam(Int32(LIBFPTR_PARAM_FONT.rawValue), intParam: 2)
+        fptr?.setParam(Int32(LIBFPTR_PARAM_FONT_DOUBLE_WIDTH.rawValue), boolParam:true)
+        fptr?.setParam(Int32(LIBFPTR_PARAM_FONT_DOUBLE_HEIGHT.rawValue), boolParam:true)
         fptr?.printText()
+        
+        // /Users/maximbutin/Documents/Study/Hackathon/ComPOS/ComPOSiOS/img.png
+        fptr?.setParam(Int32(LIBFPTR_PARAM_FILENAME.rawValue), nsStringParam: "/Users/maximbutin/Documents/Study/Hackathon/ComPOS/ComPOSiOS/img.bmp")
+        fptr?.setParam(Int32(LIBFPTR_PARAM_ALIGNMENT.rawValue), intParam:LIBFPTR_ALIGNMENT_CENTER.rawValue)
+        fptr?.printPicture()
     }
     
     @IBAction func close(_ sender: Any) {
