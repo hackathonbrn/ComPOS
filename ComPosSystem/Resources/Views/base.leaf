@@ -99,29 +99,6 @@
       </div>
       <!-- /.container-fluid -->
 
-      <!-- Sticky Footer -->
-      <footer class="sticky-footer">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright © ComPos 2019</span>
-        </li>
-        <li class="nav-item #if(title=="Categories"){active}">
-          <a class="nav-link" href="/categories">
-            <i class="fa fa-list-ol"></i>
-            <span>Категории</span></a>
-          </li>
-          <li class="nav-item #if(title=="Checks"){active}">
-            <a class="nav-link" href="/checks">
-              <i class="fa fa fa-credit-card"></i>
-              <span>Чеки</span></a>
-            </li>
-          </ul>
-          <div id="content-wrapper">
-            <div class="container-fluid">
-              #get(content)
-            </div>
-            <!-- /.container-fluid -->
-
             <!-- Sticky Footer -->
             <footer class="sticky-footer">
               <div class="container my-auto">

@@ -25,7 +25,6 @@ public func routes(_ router: Router) throws {
     try router.register(collection: productInTransactionAPIController)
     
     
-
     // WEB
     let websiteController = WebsiteController()
     try router.register(collection: websiteController)

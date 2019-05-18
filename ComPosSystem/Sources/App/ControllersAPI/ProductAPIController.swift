@@ -26,4 +26,5 @@ struct ProductAPIController: RouteCollection {
     func getAllHandler(_ req: Request) throws -> Future<[Product]> {
         return Product.query(on: req).all()
     }
+
 }
