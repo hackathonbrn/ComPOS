@@ -36,7 +36,6 @@ class ViewController: UIViewController {
         fptr?.setParam(Int32(LIBFPTR_PARAM_FONT_DOUBLE_HEIGHT.rawValue), boolParam:true)
         fptr?.printText()
         
-        // /Users/maximbutin/Documents/Study/Hackathon/ComPOS/ComPOSiOS/img.png
         fptr?.setParam(Int32(LIBFPTR_PARAM_FILENAME.rawValue), nsStringParam: "/Users/maximbutin/Documents/Study/Hackathon/ComPOS/ComPOSiOS/img.bmp")
         fptr?.setParam(Int32(LIBFPTR_PARAM_ALIGNMENT.rawValue), intParam:LIBFPTR_ALIGNMENT_CENTER.rawValue)
         fptr?.printPicture()

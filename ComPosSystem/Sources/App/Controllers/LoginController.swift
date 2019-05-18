@@ -14,7 +14,6 @@ struct LoginController: RouteCollection {
     }
 
     func boot(router: Router) throws {
-
         router.get("login", use: LoginHandler);
         router.post(LoginPostData.self, at: "login", use: LoginUserHandler);
     }

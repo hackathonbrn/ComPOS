@@ -75,4 +75,5 @@ extension Company: PasswordAuthenticatable {
         return \Company.password
     }
 }
+
 extension Company: SessionAuthenticatable {}

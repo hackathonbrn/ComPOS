@@ -22,6 +22,7 @@ struct ChecksController: RouteCollection {
 
         protectedRoutes.get("checks", use: checksHandler)
         protectedRoutes.get("checks", SalesTransaction.parameter, "detail", use: checksDetailHandler)
+        
     }
     
     func checksHandler(_ req: Request) throws -> Future<View> {

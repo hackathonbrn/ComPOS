@@ -12,12 +12,12 @@ struct SettingsController: RouteCollection {
     func boot(router: Router) throws {
         
         let authSessionRoutes = router.grouped(Company.authSessionsMiddleware())
-        
+
         authSessionRoutes.get("settings", use: settingsHandler)
         authSessionRoutes.post("settings", Company.parameter, use: editSettingsHandler)
-        
+
         let protectedRoutes = authSessionRoutes.grouped(RedirectMiddleware<Company>(path: "/login"))
-    
+
         protectedRoutes.get("settings", use: settingsHandler)
         protectedRoutes.post("settings", Company.parameter, use: editSettingsHandler)
     }

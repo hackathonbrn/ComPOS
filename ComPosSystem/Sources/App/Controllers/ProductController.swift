@@ -27,6 +27,7 @@ struct ProductController: RouteCollection {
         protectedRoutes.post("products", Product.parameter, "delete", use: deleteProductPostHandler)
         protectedRoutes.get("products", Product.parameter, "edit", use: editProductHandler)
         protectedRoutes.post("products", Product.parameter, "edit", use: editProductPostHandler)
+        
     }
 
     // Product Context

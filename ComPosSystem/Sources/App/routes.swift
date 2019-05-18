@@ -8,6 +8,9 @@ public func routes(_ router: Router) throws {
     // API
     let positionAPIController = PositionAPIController()
     try router.register(collection: positionAPIController)
+    
+    let categoryAPIController = CategoryAPIController()
+    try router.register(collection: categoryAPIController)
 
     let staffAPIController = StaffAPIController()
     try router.register(collection: staffAPIController)
@@ -20,6 +23,8 @@ public func routes(_ router: Router) throws {
 
     let productInTransactionAPIController = ProductInTransactionAPIController()
     try router.register(collection: productInTransactionAPIController)
+    
+    
 
     // WEB
     let websiteController = WebsiteController()

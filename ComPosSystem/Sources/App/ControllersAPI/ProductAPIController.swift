@@ -9,9 +9,9 @@ import Authentication
 struct ProductAPIController: RouteCollection {
     func boot(router: Router) throws {
         // API
-        let staffRoutes = router.grouped("api", "product")
-        staffRoutes.post(Product.self, use: createHandler)
-        staffRoutes.get("all", use: getAllHandler)
+        let productRoutes = router.grouped("api", "products")
+        productRoutes.post(Product.self, use: createHandler)
+        productRoutes.get("all", use: getAllHandler)
     }
 
     // CRUD (Create Read Update Delete) for SalesTransaction
