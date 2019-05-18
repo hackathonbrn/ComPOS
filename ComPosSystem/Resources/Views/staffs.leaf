@@ -1,0 +1,61 @@
+#set("content") {
+<div class="container-fluid">
+  <!-- Breadcrumbs-->
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="/">Статистика</a>
+    </li>
+    <li class="breadcrumb-item active">Персонал</li>
+  </ol>
+
+  <!-- Page Content -->
+  
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6 col-lg-6 col-md-6">
+          <h2>Персонал</h2>
+        </div>
+        <div class="col-sm-6 col-lg-6 col-md-6 align-self-center">
+          <a href="staffs/create" role="button" class="btn btn-success btn-sm" id="createStaff" style="float: right;"><i class="fa fa-plus"></i> Добавить работника</a>
+        </div>
+      </div>
+      <input type="text" id="searchInput" onkeyup="searchStaff()" placeholder="Поиск работника по фамилии..." class="form-control" style="margin-bottom: 20px; margin-top: 10px" />
+      <table class="table table-borderred table-hover" id="staffsTable">
+        <thread class="thread-light">
+          <tr>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Электронная почта</th>
+            <th>PIN</th>
+            <th>Должность</th>
+            <th>Действие</th>
+          </tr>
+        </thread>
+        
+        <tbody>
+          #for(staff in staffs) {
+          <tr>
+            <td>#(staff.name)</td>
+            <td>#(staff.sirname)</td>
+            <td>#(staff.email)</td>
+            <td>#(staff.password)</td>
+            #for(position in positions) {
+              #if(position.id == staff.position_fk) {
+                <td>#(position.name)</td>
+              }
+            }
+            <td>
+              <form method="post" action="/staffs/#(staff.id)/delete">
+                <a href="/staffs/#(staff.id)/edit" role="button" class="btn btn-outline-info btn-sm">Ред.</a>&nbsp
+                <input class="btn btn-outline-danger btn-sm" type="submit" value="Удалить" />
+              </form>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+  </div>
+<!-- /.container-fluid -->
+}
+    
+#embed("base")

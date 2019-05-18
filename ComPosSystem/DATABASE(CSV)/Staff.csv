@@ -1,0 +1,4 @@
+"id","name","sirname","email","password","company_fk","position_fk"
+2,"Максим","Бутин","buty@mail.ru","2145",1,1
+1,"Артем ","Андрюков","tema@gmail.com","3425",1,3
+3,"Сергей","Старолетов","serega505@apple.ru","4325",1,2

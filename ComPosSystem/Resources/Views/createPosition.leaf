@@ -1,0 +1,28 @@
+#set("content") {
+<div class="container-fluid">
+  <!-- Breadcrumbs-->
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="/">Статистика </a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/positions">Должности </a>
+    </li>
+    <li class="breadcrumb-item active">#if(editing){Редактировать } else {Добавить } Position </li>
+  </ol>
+  
+  <!-- Page Content -->
+  <h1>#(title)</h1>
+  <form method="post">
+    <div class="form-group">
+      <label for="name">Имя</label>
+      <input type="text" name="name" class="form-control" id="name" #if(editing){value="#(position.name)"} required/>
+      <input type="text" name="company_fk" class="form-control" id="company_fk" #if(editing){value="#(position.company_fk)"} else {value="#(company_fk)"} hidden>
+    </div>
+    <button type="submit" class="btn btn-primary">
+      #if(editing) {Сохранить} else{Добавить}
+    </button>
+  </form>
+</div>
+}
+#embed("base")

@@ -1,0 +1,48 @@
+#set("content") {
+  <div class="container-fluid">
+
+    <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="/">Статистика</a>
+      </li>
+      <li class="breadcrumb-item active">Категории</li>
+    </ol>
+
+    <!-- Page Content -->
+    <div class="row">
+      <div class="col-sm-6 col-lg-6 col-md-6">
+        <h2>Категории</h2>
+      </div>
+      <div class="col-sm-6 col-lg-6 col-md-6 align-self-center">
+        <a href="/categories/create" role="button" class="btn btn-success btn-sm" id="createCategory" style="float: right;"><i class="fa fa-plus"></i> Добавить категорию</a>
+      </div>
+    </div>
+    <input type="text" id="searchInput" onkeyup="searchCategory()" placeholder="Поиск категории по названию..." class="form-control" style="margin-bottom: 20px; margin-top: 10px" />
+    <table class="table table-borderred table-hover" id="categoriesTable">
+      <thread class="thread-light">
+        <tr>
+          <th>Название</th>
+          <th>Дейсвие</th>
+        </tr>
+      </thread>
+      <tbody>
+        #for(category in categories) {
+          <tr>
+            <td>#(category.name)</td>
+            <td>
+              <form method="post" action="/categories/#(category.id)/delete">
+                <input name="name" value="#(category.name)" hidden >
+                <input name="company_fk" value="#(company_fk)" hidden >
+                <a href="/categories/#(category.id)/edit" role="button" class="btn btn-outline-info btn-sm">Ред.</a>&nbsp
+                <input class="btn btn-outline-danger btn-sm" type="submit" value="Удалить" />
+              </form>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+</div>
+}
+
+#embed("base")

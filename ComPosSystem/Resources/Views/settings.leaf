@@ -1,0 +1,62 @@
+#set("content") {
+  <div class="container-fluid">
+  <!-- Breadcrumbs-->
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="/">Статистика</a>
+    </li>
+    <li href="settings" class="breadcrumb-item active">Настройки</li>
+  </ol>
+
+  <!-- Page Content -->
+  <h2>Настройки</h2>
+  <form  method="post" action="/settings/#(company.id)" >
+    <div class="form-group">
+      <div class="form-label-group">
+        <input type="email" name="email" class="form-control" placeholder="Электронная почта" id="email" value="#(company.email)"/>
+        <label for="email">Электронная почта</label>
+      </div>
+    </div>
+    <input hidden="" type="password" name="password" required="" value="#(company.password)" />
+    <div class="form-group">
+      <div class="form-label-group">
+        <input type="text" name="namecompany" class="form-control" placeholder="Название компании" id="namecompany" value="#(company.namecompany)" />
+        <label for="namecompany">Название компании</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-label-group">
+        <input type="url" name="site" class="form-control" placeholder="Веб-сайт" id="site" value="#(company.site)" />
+        <label for="site">Веб-сайт</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-label-group">
+        <input type="number" name="tin" class="form-control" placeholder="ИНН компании" id="tin" value="#(company.tin)"/>
+        <label for="tin">ИНН компании</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-label-group">
+        <input type="text" name="address" class="form-control" placeholder="Адрес" id="address" value="#(company.address)" />
+        <label for="address">Адрес</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-label-group">
+        <input type="tel" name="phone" class="form-control" placeholder="Телефон" id="phone" value="#(company.phone)" />
+        <label for="phone">Телефон</label>
+      </div>
+    </div>
+    <input class="btn btn-outline-danger" type="submit" value="Сохранить"/>
+  </form>
+</div>
+}
+
+#embed("base")
+
+
+
+
+
+$2b$12$q8n9bvQWx3AAduVu/3v0yOPzfTR9EYrptwwYox.7hS/cJAWcBWeyW

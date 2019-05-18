@@ -1,0 +1,72 @@
+#set("content") {
+<div class="container-fluid">
+  <!-- Breadcrumbs-->
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="/">Статистика</a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/products">Продукты</a>
+    </li>
+    <li class="breadcrumb-item active">#if(editing){Редактировать } else {Создать } продукт</li>
+  </ol>
+  
+<!-- Page Content -->
+<h1>#(title)</h1>
+<form method="post">
+  <input type="text" name="company_fk" class="form-control" id="company_fk" #if(editing){value="#(product.company_fk)"} else {value="#(company_fk)"} hidden>
+  <div class="form-group">
+    <label for="name">Имя</label>
+    <input type="text" name="name" maxlength="30" minlength="2" class="form-control" id="name" #if(editing){value="#(product.name)"} required />
+  </div>
+  <div class="form-group">
+    <label for="barcode">Шрихкод</label>
+    <input type="text" name="barcode" maxlength="16" minlength="16" class="form-control" id="barcode" #if(editing){value="#(product.name)"} required />
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-4">
+      <div class="form-group">
+        <label for="wholesalePrice">Оптовая цена</label>
+        <input type="number" step="0.01" name="wholesalePrice" min="0" max="999999" class="form-control" id="wholesalePrice" #if(editing){value="#(product.wholesalePrice)"} required />
+        <label for="wholesalePrice">₽</label>
+      </div>
+    </div>
+    <div class="col-lg-1 col-md-1 col-sm-1">
+      <h1>+</h1>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3">
+      <div class="form-group">
+        <label for="markup">Наценка</label>
+        <input type="number" name="markup" min="0" max="1000" class="form-control" id="markup" #if(editing){value="#(product.markup)"} required />
+        <label for="wholesalepPrice">%</label>
+      </div>
+    </div>
+    <div class="col-lg-1 col-md-1 col-sm-1">
+      <h1>=</h1>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3">
+      <div class="form-group">
+        <label for="retailPrice">Розничная цена</label>
+        <input type="number" name="retailPrice" class="form-control" id="retailPrice" readonly />
+        <label for="wholesalepPrice">₽</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="category_fk">Категория</label>
+    <select name="category_fk" class="form-control" id="category_fk" required>
+      #for(category in categories) {
+      <option value="#(category.id)"
+      #if(editing) {#if(category.id == product.category_fk) {selected}}>
+      #(category.name)
+    </option>
+  }
+</select>
+</div>
+<button type="submit" id="createProduct" class="btn btn-primary">#if(editing) {Сохранить} else {Добавить}
+</button>
+</form>
+<!-- /.container-fluid -->
+
+}
+#embed("base")

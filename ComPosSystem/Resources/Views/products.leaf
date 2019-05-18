@@ -1,0 +1,60 @@
+#set("content") {
+<div class="container-fluid">
+  <!-- Breadcrumbs-->
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="/">Статистика</a>
+    </li>
+    <li class="breadcrumb-item active">Продукты</li>
+  </ol>
+
+  <!-- Page Content -->
+  
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6 col-lg-6 col-md-6">
+          <h2>Продукты</h2>
+        </div>
+        <div class="col-sm-6 col-lg-6 col-md-6 align-self-center">
+          <a href="products/create" role="button" class="btn btn-success btn-sm" id="createProduct" style="float: right;"><i class="fa fa-plus"></i> Добавить продукт</a>
+        </div>
+      </div>
+      <input type="text" id="searchInput" onkeyup="searchProduct()" placeholder="Поиск продукта по названию..." class="form-control" style="margin-bottom: 20px; margin-top: 10px" />
+      <table class="table table-borderred table-hover" id="productsTable">
+        <thread class="thread-light">
+          <tr>
+            <th>Название</th>
+            <th>Оптовая цена</th>
+            <th>Наценка, %</th>
+            <th>Розничная цена</th>
+            <th>Категория</th>
+            <th>Действие</th>
+          </tr>
+        </thread>
+        <tbody>
+          #for(product in products) {
+          <tr>
+            <td>#(product.name)</td>
+            <td>#(product.wholesalePrice)</td>
+            <td>#(product.markup)</td>
+            <td>#(product.retailPrice)</td>
+            #for(category in categories) {
+              #if(category.id == product.category_fk) {
+                <td>#(category.name)</td>
+              }
+            }
+            <td>
+              <form method="post" action="/products/#(product.id)/delete">
+                <a href="/products/#(product.id)/edit" role="button" class="btn btn-outline-info btn-sm">Ред.</a>
+                <input class="btn btn-outline-danger btn-sm" type="submit" value="Удалить" />
+              </form>
+            </td>
+          </tr>
+          } 
+        </tbody>
+      </table>
+  </div>
+<!-- /.container-fluid -->
+}
+    
+#embed("base")

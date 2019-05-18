@@ -1,0 +1,34 @@
+#set("content") {
+<div class="container-fluid">
+  <!-- Breadcrumbs-->
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="/">Статистика </a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/categories">Категории </a>
+    </li>
+    <li class="breadcrumb-item active">#if(editing){Редактировать } else {Добавить } категорию </li>
+  </ol>
+
+  <!-- Page Content -->
+  <h1>#(title)</h1>
+  <form method="post">
+    <div class="form-group">
+      #if(isMessage == -1) {
+      <p><font color="red">#(message)</font></p>
+      }
+      #if(isMessage == 1) {
+      <p><font color="green">#(message)</font></p>
+      }
+      <label for="name">Имя</label>
+      <input type="text" name="name" maxlength="30" minlength="2" class="form-control" id="name" #if(editing){value="#(category.name)"} required/>
+      <input type="text" name="company_fk" class="form-control" id="company_fk" #if(editing){value="#(category.company_fk)"} else {value="#(company_fk)"} hidden>
+    </div>
+    <button type="submit" class="btn btn-primary">
+      #if(editing) {Сохранить} else{Создать}
+    </button>
+  </form>
+</div>
+}
+#embed("base")

@@ -1,0 +1,9 @@
+.idea
+Packages
+.build
+xcuserdata
+*.xcodeproj
+DerivedData/
+.DS_Store
+Products
+Dependencies

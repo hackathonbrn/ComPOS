@@ -1,0 +1,58 @@
+#set("content") {
+<div class="container-fluid">
+  <!-- Breadcrumbs-->
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="/">Статистика</a>
+    </li>
+    <li class="breadcrumb-item active">Чеки</li>
+  </ol>
+
+  <!-- Page Content -->
+  
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6 col-lg-6 col-md-6">
+        <h2>Чеки</h2>
+      </div>
+    </div>
+    <table class="table table-borderred table-hover" id="ckecksTable">
+      <thread class="thread-light">
+        <tr>
+          <!-- <th>#</th> -->
+          <th>Дата</th>
+          <th>Работник</th>
+          <th>Оптовая цена</th>
+          <th>Розничная цена</th>
+          <th>Прибыль</th>
+          <th>Действие</th>
+        </tr>
+      </thread>
+      <tbody>
+        #for(check in checks) {
+        <tr>
+          <!-- <td>#(check.number)</td> -->
+          <td>#date(check.dataTime, "MMMM d, YYYY")</td>
+          #for(staff in staffs) {
+            #if(staff.id == check.staff_fk) {
+              <td>#(staff.name) #(staff.sirname)</td>
+            }
+          }
+          <td>#(check.wholesalePrice)</td>
+          <td>#(check.retailPrice)</td>
+          <td>#(check.retailPrice - check.wholesalePrice)</td>
+          <td>
+            <form method="get" action="/checks/#(check.id)/detail">
+              <input class="btn btn-outline-danger btn-sm" type="submit" value="Детали" />
+            </form>
+          </td>
+        </tr>
+        } 
+      </tbody>
+    </table>
+  </div>
+</div>
+}
+<!-- /.container-fluid -->
+    
+#embed("base")
