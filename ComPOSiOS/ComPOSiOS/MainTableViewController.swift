@@ -11,45 +11,72 @@ import UIKit
 class MainTableViewController: UITableViewController {
     
     var categories = [Category]()
+    var products = [Product]()
+    
+    let categoriesRequest = ResourceRequest<Category>(resourcePath: "categories")
+    let productsRequest = ResourceRequest<Product>(resourcePath: "products")
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchCategoryData()
+        fetchProductData()
     }
-    
     
     func fetchCategoryData() {
-        let url = URL(string: "http://localhost:8080/api/categories")!
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data else {
-                print(error?.localizedDescription ?? "Unknown error")
-                return
-            }
-            
-            let decoder = JSONDecoder()
-            if let categories = try? decoder.decode([Category].self, from: data) {
+        categoriesRequest.getAll { [weak self] categoryResult in
+            switch categoryResult {
+            case .failure:
+                print("Error")
+            case .success(let categories):
                 DispatchQueue.main.async {
+                    guard let self = self else { return }
                     self.categories = categories
                     self.tableView.reloadData()
-                    print("Loaded \(categories.count) categories")
                 }
-            } else {
-                print("Unable to parse JSON response.")
             }
-        }.resume()
+        }
     }
+    
+    func fetchProductData() {
+        productsRequest.getAll { [weak self] productResult in
+            switch productResult {
+            case .failure:
+                print("Error")
+            case .success(let products):
+                DispatchQueue.main.async {
+                    guard let self = self else { return }
+                    self.products = products
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
+    
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories.count
+//        return categories.count
+        return products.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let category = categories[indexPath.row]
-        cell.textLabel?.text = "\(category.name)"
+//        let category = categories[indexPath.row]
+//        cell.textLabel?.text = "\(category.name)"
+//        cell.detailTextLabel?.text = "\(category.id)"
+        let product = products[indexPath.row]
+        cell.textLabel?.text = "\(product.name)"
+        for category in categories {
+            if category.id == product.category_fk {
+                print(product.category_fk)
+                cell.detailTextLabel?.text = "\(category.name)"
+            }
+        }
+        
+        
+        
 
         return cell
     }
