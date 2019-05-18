@@ -13,9 +13,8 @@
 		A29F12C2228F1E82003C517A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A29F12C1228F1E82003C517A /* Assets.xcassets */; };
 		A29F12C5228F1E82003C517A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A29F12C3228F1E82003C517A /* LaunchScreen.storyboard */; };
 		A29F12D0228F1E82003C517A /* ComPOSiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F12CF228F1E82003C517A /* ComPOSiOSTests.swift */; };
-		A29F12DC228F1EAB003C517A /* ComPOSiOS-Bridging-Header.m in Sources */ = {isa = PBXBuildFile; fileRef = A29F12DB228F1EAB003C517A /* ComPOSiOS-Bridging-Header.m */; };
-		A29F12E2228F205A003C517A /* fptr10.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A29F12E1228F205A003C517A /* fptr10.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A29F12E4228F2094003C517A /* fptr10.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A29F12E1228F205A003C517A /* fptr10.framework */; };
+		A29F12EA228F2B17003C517A /* fptr10.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A29F12E9228F2B17003C517A /* fptr10.framework */; };
+		A29F12EB228F2D0C003C517A /* fptr10.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A29F12E9228F2B17003C517A /* fptr10.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +34,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A29F12E2228F205A003C517A /* fptr10.framework in Embed Frameworks */,
+				A29F12EB228F2D0C003C517A /* fptr10.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,9 +52,8 @@
 		A29F12CB228F1E82003C517A /* ComPOSiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComPOSiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A29F12CF228F1E82003C517A /* ComPOSiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComPOSiOSTests.swift; sourceTree = "<group>"; };
 		A29F12D1228F1E82003C517A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A29F12DA228F1EAB003C517A /* ComPOSiOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ComPOSiOS-Bridging-Header.h"; sourceTree = "<group>"; };
-		A29F12DB228F1EAB003C517A /* ComPOSiOS-Bridging-Header.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ComPOSiOS-Bridging-Header.m"; sourceTree = "<group>"; };
-		A29F12E1228F205A003C517A /* fptr10.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = fptr10.framework; sourceTree = "<group>"; };
+		A29F12E9228F2B17003C517A /* fptr10.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = fptr10.framework; sourceTree = "<group>"; };
+		A29F12EC228F2D56003C517A /* ComPosiOS-Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ComPosiOS-Bridging.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A29F12E4228F2094003C517A /* fptr10.framework in Frameworks */,
+				A29F12EA228F2B17003C517A /* fptr10.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,7 +78,7 @@
 		A29F12AE228F1E81003C517A = {
 			isa = PBXGroup;
 			children = (
-				A29F12E1228F205A003C517A /* fptr10.framework */,
+				A29F12E9228F2B17003C517A /* fptr10.framework */,
 				A29F12B9228F1E81003C517A /* ComPOSiOS */,
 				A29F12CE228F1E82003C517A /* ComPOSiOSTests */,
 				A29F12B8228F1E81003C517A /* Products */,
@@ -106,8 +104,7 @@
 				A29F12C1228F1E82003C517A /* Assets.xcassets */,
 				A29F12C3228F1E82003C517A /* LaunchScreen.storyboard */,
 				A29F12C6228F1E82003C517A /* Info.plist */,
-				A29F12DB228F1EAB003C517A /* ComPOSiOS-Bridging-Header.m */,
-				A29F12DA228F1EAB003C517A /* ComPOSiOS-Bridging-Header.h */,
+				A29F12EC228F2D56003C517A /* ComPosiOS-Bridging.h */,
 			);
 			path = ComPOSiOS;
 			sourceTree = "<group>";
@@ -232,7 +229,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A29F12BD228F1E81003C517A /* ViewController.swift in Sources */,
-				A29F12DC228F1EAB003C517A /* ComPOSiOS-Bridging-Header.m in Sources */,
 				A29F12BB228F1E81003C517A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +328,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -386,6 +383,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -409,7 +407,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.butinmv.ComPOSiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "ComPOSiOS/ComPOSiOS-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/maximbutin/Documents/Study/Hackathon/ComPOS/ComPOSiOS/ComPOSiOS/ComPosiOS-Bridging.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -434,7 +432,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.butinmv.ComPOSiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "ComPOSiOS/ComPOSiOS-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/maximbutin/Documents/Study/Hackathon/ComPOS/ComPOSiOS/ComPOSiOS/ComPosiOS-Bridging.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
