@@ -15,6 +15,9 @@
 		A29F12D0228F1E82003C517A /* ComPOSiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F12CF228F1E82003C517A /* ComPOSiOSTests.swift */; };
 		A29F12EA228F2B17003C517A /* fptr10.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A29F12E9228F2B17003C517A /* fptr10.framework */; };
 		A29F12EB228F2D0C003C517A /* fptr10.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A29F12E9228F2B17003C517A /* fptr10.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A2E42D6B2290032000D200D5 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E42D6A2290032000D200D5 /* MainTableViewController.swift */; };
+		A2E42D6D229003CF00D200D5 /* ResourceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E42D6C229003CF00D200D5 /* ResourceRequest.swift */; };
+		A2E42D70229009E800D200D5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E42D6F229009E800D200D5 /* Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,9 @@
 		A29F12D1228F1E82003C517A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A29F12E9228F2B17003C517A /* fptr10.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = fptr10.framework; sourceTree = "<group>"; };
 		A29F12EC228F2D56003C517A /* ComPosiOS-Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ComPosiOS-Bridging.h"; sourceTree = "<group>"; };
+		A2E42D6A2290032000D200D5 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		A2E42D6C229003CF00D200D5 /* ResourceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceRequest.swift; sourceTree = "<group>"; };
+		A2E42D6F229009E800D200D5 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,11 +106,14 @@
 			children = (
 				A29F12BA228F1E81003C517A /* AppDelegate.swift */,
 				A29F12BC228F1E81003C517A /* ViewController.swift */,
+				A2E42D6A2290032000D200D5 /* MainTableViewController.swift */,
 				A29F12BE228F1E81003C517A /* Main.storyboard */,
 				A29F12C1228F1E82003C517A /* Assets.xcassets */,
 				A29F12C3228F1E82003C517A /* LaunchScreen.storyboard */,
 				A29F12C6228F1E82003C517A /* Info.plist */,
+				A2E42D6E2290049900D200D5 /* Utilities */,
 				A29F12EC228F2D56003C517A /* ComPosiOS-Bridging.h */,
+				A2E42D6F229009E800D200D5 /* Category.swift */,
 			);
 			path = ComPOSiOS;
 			sourceTree = "<group>";
@@ -123,6 +132,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A2E42D6E2290049900D200D5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A2E42D6C229003CF00D200D5 /* ResourceRequest.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,7 +245,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2E42D6D229003CF00D200D5 /* ResourceRequest.swift in Sources */,
+				A2E42D70229009E800D200D5 /* Category.swift in Sources */,
 				A29F12BD228F1E81003C517A /* ViewController.swift in Sources */,
+				A2E42D6B2290032000D200D5 /* MainTableViewController.swift in Sources */,
 				A29F12BB228F1E81003C517A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

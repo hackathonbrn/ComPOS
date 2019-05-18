@@ -11,7 +11,7 @@ struct ProductAPIController: RouteCollection {
         // API
         let productRoutes = router.grouped("api", "products")
         productRoutes.post(Product.self, use: createHandler)
-        productRoutes.get("all", use: getAllHandler)
+        productRoutes.get(use: getAllHandler)
     }
 
     // CRUD (Create Read Update Delete) for SalesTransaction

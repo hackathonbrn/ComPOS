@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fptr?.setSingleSetting(LIBFPTR_SETTING_IPADDRESS, value: "192.168.1.146")
+        fptr?.setSingleSetting(LIBFPTR_SETTING_IPADDRESS, value: "192.168.1.147")
         fptr?.setSingleSetting(LIBFPTR_SETTING_PORT, value: "2")
         fptr?.setSingleSetting(LIBFPTR_SETTING_IPPORT, value: "5555")
         fptr?.applySingleSettings()
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func close(_ sender: Any) {
-        fptr?.close()
+        fptr?.endNonfiscalDocument()
     }
 }
 
