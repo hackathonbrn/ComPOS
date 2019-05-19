@@ -14,8 +14,8 @@ class MainTableViewController: UITableViewController {
     var products = [Product]()
     var selected: [Product] = []
     
-    let fptr = IFptr()
-    
+    var currentfptr = IFptr()
+
     //var productsInCategory: [Int: [Product]] = [:]
 
     //let categoriesRequest = ResourceRequest<Category>(resourcePath: "categories")
@@ -27,29 +27,30 @@ class MainTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        fptr?.setSingleSetting(LIBFPTR_SETTING_IPADDRESS, value: "192.168.1.147")
-        fptr?.setSingleSetting(LIBFPTR_SETTING_PORT, value: "2")
-        fptr?.setSingleSetting(LIBFPTR_SETTING_IPPORT, value: "5555")
-        fptr?.applySingleSettings()
         
-        fptr?.getSettings()
-    
+        let tabBar = tabBarController as! TabBarController
+        currentfptr = tabBar.fptr
+        
         tableView.tableFooterView = UIView()
         fetchProductData()
         
         
-        //        group.enter()
-        //        let queue = DispatchQueue(label: "work3")
-        //        queue.async { self.fetchCategoryData() }
-        //        group.wait()
-        //
-        //        groupp.enter()
-        //        let queue1 = DispatchQueue(label: "work4")
-        //        queue1.async { self.fetchProductData() }
-        //        groupp.wait()
-        //
-        //        correlateProductsWithCategories()
+//        group.enter()
+//        let queue = DispatchQueue(label: "work3")
+//        queue.async { self.fetchCategoryData() }
+//        group.wait()
+//
+//        groupp.enter()
+//        let queue1 = DispatchQueue(label: "work4")
+//        queue1.async { self.fetchProductData() }
+//        groupp.wait()
+//
+//        correlateProductsWithCategories()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let tabBar = tabBarController as! TabBarController
+        currentfptr = tabBar.fptr
     }
     
 //    func correlateProductsWithCategories() {
@@ -162,55 +163,59 @@ class MainTableViewController: UITableViewController {
             sum = sum + select.retailPrice
         }
         
-        fptr?.setParam(Int32(LIBFPTR_PARAM_TEXT.rawValue), nsStringParam: "СOMPOS")
-        fptr?.setParam(Int32(LIBFPTR_PARAM_ALIGNMENT.rawValue), intParam: LIBFPTR_ALIGNMENT_CENTER.rawValue)
-        fptr?.setParam(Int32(LIBFPTR_PARAM_FONT.rawValue), intParam: 2)
-        fptr?.setParam(Int32(LIBFPTR_PARAM_FONT_DOUBLE_WIDTH.rawValue), boolParam:true)
-        fptr?.setParam(Int32(LIBFPTR_PARAM_FONT_DOUBLE_HEIGHT.rawValue), boolParam:true)
-        fptr?.printText()
+        currentfptr?.setParam(Int32(LIBFPTR_PARAM_TEXT.rawValue), nsStringParam: "СOMPOS")
+        currentfptr?.setParam(Int32(LIBFPTR_PARAM_ALIGNMENT.rawValue), intParam: LIBFPTR_ALIGNMENT_CENTER.rawValue)
+        currentfptr?.setParam(Int32(LIBFPTR_PARAM_FONT.rawValue), intParam: 2)
+        currentfptr?.setParam(Int32(LIBFPTR_PARAM_FONT_DOUBLE_WIDTH.rawValue), boolParam:true)
+        currentfptr?.setParam(Int32(LIBFPTR_PARAM_FONT_DOUBLE_HEIGHT.rawValue), boolParam:true)
+        currentfptr?.printText()
         
-        fptr?.setParam(Int32(LIBFPTR_PARAM_TEXT.rawValue), nsStringParam: "--------------------------------------------")
-        fptr?.setParam(Int32(LIBFPTR_PARAM_ALIGNMENT.rawValue), intParam: LIBFPTR_ALIGNMENT_CENTER.rawValue)
-        fptr?.printText()
+        currentfptr?.setParam(Int32(LIBFPTR_PARAM_TEXT.rawValue), nsStringParam: "--------------------------------------------")
+        currentfptr?.setParam(Int32(LIBFPTR_PARAM_ALIGNMENT.rawValue), intParam: LIBFPTR_ALIGNMENT_CENTER.rawValue)
+        currentfptr?.printText()
         
         for select in selected {
-            fptr?.setParam(Int32(LIBFPTR_PARAM_TEXT.rawValue), nsStringParam: "\(select.name) - \(select.retailPrice) ₽")
-            fptr?.printText()
+            currentfptr?.setParam(Int32(LIBFPTR_PARAM_TEXT.rawValue), nsStringParam: "\(select.name) - \(select.retailPrice) ₽")
+            currentfptr?.printText()
         }
         
-        fptr?.setParam(Int32(LIBFPTR_PARAM_TEXT.rawValue), nsStringParam: "ИТОГО")
-        fptr?.setParam(Int32(LIBFPTR_PARAM_ALIGNMENT.rawValue), intParam: LIBFPTR_ALIGNMENT_LEFT.rawValue)
-        fptr?.setParam(Int32(LIBFPTR_PARAM_FONT.rawValue), intParam: 1)
-        fptr?.setParam(Int32(LIBFPTR_PARAM_FONT_DOUBLE_WIDTH.rawValue), boolParam:true)
-        fptr?.setParam(Int32(LIBFPTR_PARAM_FONT_DOUBLE_HEIGHT.rawValue), boolParam:true)
-        fptr?.printText()
+        for _ in 1..<5 {
+            currentfptr?.printText()
+        }
         
-        fptr?.setParam(Int32(LIBFPTR_PARAM_TEXT.rawValue), nsStringParam: "\(sum)")
-        fptr?.setParam(Int32(LIBFPTR_PARAM_ALIGNMENT.rawValue), intParam: LIBFPTR_ALIGNMENT_LEFT.rawValue)
-        fptr?.setParam(Int32(LIBFPTR_PARAM_FONT.rawValue), intParam: 1)
-        fptr?.setParam(Int32(LIBFPTR_PARAM_FONT_DOUBLE_WIDTH.rawValue), boolParam:true)
-        fptr?.setParam(Int32(LIBFPTR_PARAM_FONT_DOUBLE_HEIGHT.rawValue), boolParam:true)
-        fptr?.printText()
+        currentfptr?.setParam(Int32(LIBFPTR_PARAM_TEXT.rawValue), nsStringParam: "ИТОГО")
+        currentfptr?.setParam(Int32(LIBFPTR_PARAM_ALIGNMENT.rawValue), intParam: LIBFPTR_ALIGNMENT_LEFT.rawValue)
+        currentfptr?.setParam(Int32(LIBFPTR_PARAM_FONT.rawValue), intParam: 1)
+        currentfptr?.setParam(Int32(LIBFPTR_PARAM_FONT_DOUBLE_WIDTH.rawValue), boolParam:true)
+        currentfptr?.setParam(Int32(LIBFPTR_PARAM_FONT_DOUBLE_HEIGHT.rawValue), boolParam:true)
+        currentfptr?.printText()
+        
+        currentfptr?.setParam(Int32(LIBFPTR_PARAM_TEXT.rawValue), nsStringParam: "\(sum)")
+        currentfptr?.setParam(Int32(LIBFPTR_PARAM_ALIGNMENT.rawValue), intParam: LIBFPTR_ALIGNMENT_LEFT.rawValue)
+        currentfptr?.setParam(Int32(LIBFPTR_PARAM_FONT.rawValue), intParam: 1)
+        currentfptr?.setParam(Int32(LIBFPTR_PARAM_FONT_DOUBLE_WIDTH.rawValue), boolParam:true)
+        currentfptr?.setParam(Int32(LIBFPTR_PARAM_FONT_DOUBLE_HEIGHT.rawValue), boolParam:true)
+        currentfptr?.printText()
         
         if max?.retailPrice == 543.0 {
-            fptr?.setParam(Int32(LIBFPTR_PARAM_FILENAME.rawValue), nsStringParam: "/Users/maximbutin/Documents/Study/Hackathon/ComPOS/ComPOSiOS/cokteil.bmp")
-            fptr?.setParam(Int32(LIBFPTR_PARAM_ALIGNMENT.rawValue), intParam:LIBFPTR_ALIGNMENT_CENTER.rawValue)
-            fptr?.printPicture()
+            currentfptr?.setParam(Int32(LIBFPTR_PARAM_FILENAME.rawValue), nsStringParam: "/Users/maximbutin/Documents/Study/Hackathon/ComPOS/ComPOSiOS/cokteil.bmp")
+            currentfptr?.setParam(Int32(LIBFPTR_PARAM_ALIGNMENT.rawValue), intParam:LIBFPTR_ALIGNMENT_CENTER.rawValue)
+            currentfptr?.printPicture()
         } else if max?.retailPrice == 4124 {
-            fptr?.setParam(Int32(LIBFPTR_PARAM_FILENAME.rawValue), nsStringParam: "/Users/maximbutin/Documents/Study/Hackathon/ComPOS/ComPOSiOS/burger.bmp")
-            fptr?.setParam(Int32(LIBFPTR_PARAM_ALIGNMENT.rawValue), intParam:LIBFPTR_ALIGNMENT_CENTER.rawValue)
-            fptr?.printPicture()
+            currentfptr?.setParam(Int32(LIBFPTR_PARAM_FILENAME.rawValue), nsStringParam: "/Users/maximbutin/Documents/Study/Hackathon/ComPOS/ComPOSiOS/burger.bmp")
+            currentfptr?.setParam(Int32(LIBFPTR_PARAM_ALIGNMENT.rawValue), intParam:LIBFPTR_ALIGNMENT_CENTER.rawValue)
+            currentfptr?.printPicture()
         } else {
-            fptr?.setParam(Int32(LIBFPTR_PARAM_FILENAME.rawValue), nsStringParam: "/Users/maximbutin/Documents/Study/Hackathon/ComPOS/ComPOSiOS/img.bmp")
-            fptr?.setParam(Int32(LIBFPTR_PARAM_ALIGNMENT.rawValue), intParam:LIBFPTR_ALIGNMENT_CENTER.rawValue)
-            fptr?.printPicture()
+            currentfptr?.setParam(Int32(LIBFPTR_PARAM_FILENAME.rawValue), nsStringParam: "/Users/maximbutin/Documents/Study/Hackathon/ComPOS/ComPOSiOS/img.bmp")
+            currentfptr?.setParam(Int32(LIBFPTR_PARAM_ALIGNMENT.rawValue), intParam:LIBFPTR_ALIGNMENT_CENTER.rawValue)
+            currentfptr?.printPicture()
         }
         
-        fptr?.endNonfiscalDocument()
+        currentfptr?.endNonfiscalDocument()
     }
 
     @IBAction func connect(_ sender: Any) {
-        fptr?.open()
+        currentfptr?.open()
     }
     /*
     // MARK: - Navigation

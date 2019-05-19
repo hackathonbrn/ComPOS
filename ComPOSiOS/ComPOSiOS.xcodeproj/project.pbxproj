@@ -19,6 +19,8 @@
 		A2E42D6D229003CF00D200D5 /* ResourceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E42D6C229003CF00D200D5 /* ResourceRequest.swift */; };
 		A2E42D70229009E800D200D5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E42D6F229009E800D200D5 /* Category.swift */; };
 		A2E42D7322901C9A00D200D5 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E42D7222901C9A00D200D5 /* Product.swift */; };
+		A2E42D75229123E200D200D5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E42D74229123E200D200D5 /* SettingsViewController.swift */; };
+		A2E42D792291298100D200D5 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E42D782291298100D200D5 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		A2E42D6C229003CF00D200D5 /* ResourceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceRequest.swift; sourceTree = "<group>"; };
 		A2E42D6F229009E800D200D5 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		A2E42D7222901C9A00D200D5 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		A2E42D74229123E200D200D5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A2E42D782291298100D200D5 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +113,10 @@
 				A2E42D6E2290049900D200D5 /* Utilities */,
 				A2E42D7122901C8A00D200D5 /* Model */,
 				A29F12BA228F1E81003C517A /* AppDelegate.swift */,
+				A2E42D782291298100D200D5 /* TabBarController.swift */,
 				A29F12BC228F1E81003C517A /* ViewController.swift */,
 				A2E42D6A2290032000D200D5 /* MainTableViewController.swift */,
+				A2E42D74229123E200D200D5 /* SettingsViewController.swift */,
 				A29F12BE228F1E81003C517A /* Main.storyboard */,
 				A29F12C1228F1E82003C517A /* Assets.xcassets */,
 				A29F12C3228F1E82003C517A /* LaunchScreen.storyboard */,
@@ -257,7 +263,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2E42D6D229003CF00D200D5 /* ResourceRequest.swift in Sources */,
+				A2E42D792291298100D200D5 /* TabBarController.swift in Sources */,
 				A2E42D70229009E800D200D5 /* Category.swift in Sources */,
+				A2E42D75229123E200D200D5 /* SettingsViewController.swift in Sources */,
 				A29F12BD228F1E81003C517A /* ViewController.swift in Sources */,
 				A2E42D6B2290032000D200D5 /* MainTableViewController.swift in Sources */,
 				A29F12BB228F1E81003C517A /* AppDelegate.swift in Sources */,
