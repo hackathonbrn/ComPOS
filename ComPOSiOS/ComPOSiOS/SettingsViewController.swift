@@ -20,6 +20,8 @@ class SettingsViewController: UITableViewController {
         tableView.tableFooterView = UIView()
         let tabBar = tabBarController as! TabBarController
         currentFptr = tabBar.fptr
+        ipadressTextField.text = "192.168.1.147"
+        portTextField.text = "5555"
     }
     
     override func viewWillDisappear(_ animated: Bool) {

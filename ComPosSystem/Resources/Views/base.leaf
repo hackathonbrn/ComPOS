@@ -53,6 +53,7 @@
       <button type="button" class="btn btn-outline-success btn-sm active">RU</button>
       <button type="button" class="btn btn-outline-success btn-sm">ENG</button>
     </div>
+    <a class="btn btn-warning btn-sm" href="/checklearning" role="button">Обучить</a>
   </nav>
 
   <div id="wrapper">

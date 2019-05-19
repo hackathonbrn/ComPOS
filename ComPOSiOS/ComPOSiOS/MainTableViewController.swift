@@ -10,20 +10,12 @@ import UIKit
 
 class MainTableViewController: UITableViewController {
     
-    //var categories = [Category]()
     var products = [Product]()
     var selected: [Product] = []
     
     var currentfptr = IFptr()
 
-    //var productsInCategory: [Int: [Product]] = [:]
-
-    //let categoriesRequest = ResourceRequest<Category>(resourcePath: "categories")
     let productsRequest = ResourceRequest<Product>(resourcePath: "products")
-    
-//    let group = DispatchGroup()
-//    let groupp = DispatchGroup()
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,59 +25,16 @@ class MainTableViewController: UITableViewController {
         
         tableView.tableFooterView = UIView()
         fetchProductData()
-        
-        
-//        group.enter()
-//        let queue = DispatchQueue(label: "work3")
-//        queue.async { self.fetchCategoryData() }
-//        group.wait()
-//
-//        groupp.enter()
-//        let queue1 = DispatchQueue(label: "work4")
-//        queue1.async { self.fetchProductData() }
-//        groupp.wait()
-//
-//        correlateProductsWithCategories()
-    }
+}
     
     override func viewDidAppear(_ animated: Bool) {
         let tabBar = tabBarController as! TabBarController
         currentfptr = tabBar.fptr
     }
     
-//    func correlateProductsWithCategories() {
-//        for product in products {
-//            if productsInCategory[product.category_fk] != nil {
-//                productsInCategory.updateValue(productsInCategory[product.category_fk]! + [product], forKey: product.category_fk)
-//            } else {
-//                productsInCategory.updateValue([product], forKey: product.category_fk)
-//            }
-//        }
-//    }
-    
-//    func fetchCategoryData() {
-//        let queue = DispatchQueue(label: "work2")
-//        categoriesRequest.getAll { [weak self] categoryResult in
-//            switch categoryResult {
-//            case .failure:
-//                print("Error")
-//            case .success(let categories):
-//                queue.async {
-//                    guard let self = self else { return }
-//                    self.categories = categories
-//                    self.group.leave()
-//                }
-//
-//                DispatchQueue.main.async {
-//                    self?.tableView.reloadData()
-//
-//                }
-//            }
-//        }
-//    }
     
     func fetchProductData() {
-        //let queue = DispatchQueue(label: "work1")
+
         productsRequest.getAll { [weak self] productResult in
             switch productResult {
             case .failure:
@@ -95,38 +44,11 @@ class MainTableViewController: UITableViewController {
                     guard let self = self else { return }
                     self.products = products
                     self.tableView.reloadData()
-                    //self.groupp.leave()
                 }
-                
-//                DispatchQueue.main.async {
-//                    self?.tableView.reloadData()
-//                }
             }
         }
     }
     
-
-    // MARK: - Table view data source
-    
-//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//
-//        var categoryTitle = [String]()
-//
-//        for categoryID in productsInCategory.keys {
-//            for category in categories {
-//                if categoryID == category.id {
-//                    categoryTitle.append(category.name)
-//                }
-//            }
-//        }
-//
-//        return categoryTitle[section]
-//    }
-//
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        return categories.count
-//    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return products.count
     }
@@ -163,7 +85,9 @@ class MainTableViewController: UITableViewController {
             sum = sum + select.retailPrice
         }
         
-        currentfptr?.setParam(Int32(LIBFPTR_PARAM_TEXT.rawValue), nsStringParam: "СOMPOS")
+        currentfptr?.setParam(Int32(LIBFPTR_PARAM_FILENAME.rawValue), nsStringParam: "/Users/maximbutin/Documents/Study/Hackathon/ComPOS/ComPOSiOS/logo.bmp")
+        currentfptr?.setParam(Int32(LIBFPTR_PARAM_ALIGNMENT.rawValue), intParam:LIBFPTR_ALIGNMENT_CENTER.rawValue)
+        currentfptr?.printPicture()
         currentfptr?.setParam(Int32(LIBFPTR_PARAM_ALIGNMENT.rawValue), intParam: LIBFPTR_ALIGNMENT_CENTER.rawValue)
         currentfptr?.setParam(Int32(LIBFPTR_PARAM_FONT.rawValue), intParam: 2)
         currentfptr?.setParam(Int32(LIBFPTR_PARAM_FONT_DOUBLE_WIDTH.rawValue), boolParam:true)
@@ -201,8 +125,12 @@ class MainTableViewController: UITableViewController {
             currentfptr?.setParam(Int32(LIBFPTR_PARAM_FILENAME.rawValue), nsStringParam: "/Users/maximbutin/Documents/Study/Hackathon/ComPOS/ComPOSiOS/cokteil.bmp")
             currentfptr?.setParam(Int32(LIBFPTR_PARAM_ALIGNMENT.rawValue), intParam:LIBFPTR_ALIGNMENT_CENTER.rawValue)
             currentfptr?.printPicture()
-        } else if max?.retailPrice == 4124 {
+        } else if max?.retailPrice == 4124.0 {
             currentfptr?.setParam(Int32(LIBFPTR_PARAM_FILENAME.rawValue), nsStringParam: "/Users/maximbutin/Documents/Study/Hackathon/ComPOS/ComPOSiOS/burger.bmp")
+            currentfptr?.setParam(Int32(LIBFPTR_PARAM_ALIGNMENT.rawValue), intParam:LIBFPTR_ALIGNMENT_CENTER.rawValue)
+            currentfptr?.printPicture()
+        } else if max?.retailPrice == 245.0 {
+            currentfptr?.setParam(Int32(LIBFPTR_PARAM_FILENAME.rawValue), nsStringParam: "/Users/maximbutin/Documents/Study/Hackathon/ComPOS/ComPOSiOS/gum.bmp")
             currentfptr?.setParam(Int32(LIBFPTR_PARAM_ALIGNMENT.rawValue), intParam:LIBFPTR_ALIGNMENT_CENTER.rawValue)
             currentfptr?.printPicture()
         } else {
@@ -217,14 +145,4 @@ class MainTableViewController: UITableViewController {
     @IBAction func connect(_ sender: Any) {
         currentfptr?.open()
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
